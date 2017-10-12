@@ -1,0 +1,50 @@
+@import "_side-nav"
+@import "_menu"
+
+//DELETE LATER ---------------------------------
+body
+  height: 1500px
+
+.header
+  width: $full-width
+  height: 100vh
+  +main-background('../img/man4.jpg', center, no-repeat, cover, fixed)
+  +flexbox(flex, column, center, center, center)
+
+.hero-h1
+  margin: auto
+  width: $full-width
+  +font($raleway, 1.3em, 200, 1.2, 4px, $upper)
+  color: $gray
+  @media only screen and (min-width: $break-small)
+    font-size: 1.7em
+  & span
+    color: $vatten
+    text-shadow: 1px 1px 2px $lake
+    +font($montserrat, 2.7em, 600, auto, auto, $upper)
+    @media only screen and (min-width: $break-small) //460px
+      font-size: 3em
+    @media only screen and (min-width: $break-medium) //780px
+      font-size: 3.9em
+    @media only screen and (min-width: $break-large) //1200px
+      font-size: 5.2em
+
+//Arrow bouncing
+.arrow
+  width: 50px
+  +position(relative, null null 40px null)
+  opacity: .7
+  display: none
+  &:hover
+    opacity: 1
+
+  &::before
+    content: 'Find out more'
+    width: 220px
+    height: 10px
+    +font($raleway, 1.6em, 200, null, null, null)
+    color: $gray
+    +position(absolute, null -3.5em 2em null)
+
+  @media only screen and (min-width: $break-medium) //780px
+    display: block

@@ -1,0 +1,61 @@
+.sideNav
+  width: 100%
+  height: 0
+  position: fixed
+  z-index: 6
+  top: 0
+  right: 0
+  background: linear-gradient(rgba($navy, .9) 0%, transparent 200% )
+  overflow: hidden
+  -webkit-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550)
+  -moz-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550)
+  -o-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550)
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) /* easeInOutBack */
+
+  +flexbox(flex, column, space-around, center, center)
+  +font($raleway, 1.6em, 300, 1, 1px, $upper)
+  color: $dark
+
+  //menu items
+  & .navContent
+    margin-top: 50px
+    & a
+      display: block
+      margin: 30px 0
+      border-radius: 3px
+      padding: 10px 12px
+      background: $vatten
+      +transition(all 200ms)
+
+      &:hover
+        box-shadow: 0px 0px 0px 2px $gray, 0px 0px 0px 4px $vatten
+      &:active
+        box-shadow: 0px 0px 0px 1px $vatten inset, 0px 0px 2px 3px $gray inset
+
+      //push first item to the right
+      &:first-of-type
+        position: relative
+        left: 60px
+      //push first item to the left
+      &:last-of-type
+        position: relative
+        right: 60px
+
+  //social media items on sideNav
+  .social-media
+    +flexbox(flex, row, center, center, center)
+    & a
+      padding: 0 10px
+      background: none
+      font-size: 1.3em
+      color: $gray
+
+    //social media hovers
+    & .fa-twitter:hover
+      color: #0084b4
+    & .fa-github:hover
+      color: #6e5494
+    & .fa-google:hover
+      color: #bd2c00
+    & .fa-linkedin:hover
+      color: #00a0dc

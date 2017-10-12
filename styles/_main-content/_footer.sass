@@ -1,0 +1,52 @@
+footer
+  +font($raleway, 1em, 200, null, null, null)
+  +flexbox(flex, row, center, center, center)
+  z-index: -1
+  position: fixed
+  left: 0
+  bottom: 0
+  right: 0
+  min-height: 10em
+  background-attachment: fixed
+  background-size: cover
+  background: rgba($gray, .8)
+  color: $dark
+  padding: 10px
+
+  //hide on small screens
+  .location, .social-media
+    display: none
+
+  @media only screen and (min-width: $break-medium) //780px
+    justify-content: space-evenly
+    font-size: 1.2em
+    min-height: 8em
+    //show on larger screens
+    .location, .social-media
+      display: block
+  #map
+    width: 220px
+    height: 130px
+    position: relative
+    top: 5px
+    border-radius: 3px
+    border: 1px solid $dark
+
+  //social medias
+  .social-media
+    a
+      margin: 0 .1em
+      font-size: 1.5em
+    .fa-twitter:hover
+      color: #0084b4
+    .fa-github:hover
+      color: #6e5494
+    .fa-google:hover
+      color: #bd2c00
+    .fa-linkedin:hover
+      color: #00a0dc
+.top
+  position: fixed
+  bottom: 15px
+  right: 15px
+  font-size: 2em

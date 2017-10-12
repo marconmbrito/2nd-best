@@ -1,0 +1,21 @@
+@mixin flexbox($flex, $direction, $justify, $align-items, $txt-align)
+  display: $flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align-items
+  text-align: $txt-align
+
+@mixin font($family, $size, $weight, $line-height, $ls, $transform)
+  font-family: $family
+  font-size: $size
+  font-weight: $weight
+  line-height: $line-height
+  letter-spacing: $ls
+  text-transform: $transform
+
+@mixin main-background($url, $center, $repeat, $size, $attach)
+  background: url($url)
+  background-position: $center $center
+  background-repeat: $repeat
+  background-size: $size
+  background-attachment: $attach

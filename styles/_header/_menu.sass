@@ -1,0 +1,105 @@
+.main-nav
+  +flexbox(flex, row, center, center, null)
+  position: fixed
+  width: 100%
+  z-index: 99
+  height: 60px
+  +transition(all .8s $ease-in-out-quint)
+  @media only screen and (min-width: $break-small) //460px
+    height: 75px
+
+.fixed
+  background: rgba($navy, .7)
+  box-shadow: 1px 1px 1px $dark, 2px 2px 1px $lake
+
+.menu-icon
+  position: absolute
+  right: 1em
+  top: 1em
+  z-index: 99
+  cursor: pointer
+  +transition()
+  &:hover
+    opacity: .8
+
+  @media only screen and (min-width: $break-medium) //780px
+    right: 2em
+    //appears word 'menu' when screen is 780px or larger
+    &::before
+      content: 'menu'
+      color: $gray
+      +font($raleway, 1.6em, 100, null, null, $lower)
+      +position(absolute, .2em 1.9em null null)
+
+
+//menu icon each bar
+.bar1, .bar2, .bar3
+  width: 35px
+  height: 5px
+  background-color: $vatten
+  margin: 6px 0
+  transition: 0.4s
+  box-shadow: 1px 1px 1px $lake
+  border-radius: $radius
+
+//nav bar on click
+.rotate .bar1
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px)
+  transform: rotate(-45deg) translate(-9px, 6px)
+
+.rotate .bar2
+  opacity: 0 //middle bar hide
+  position: relative
+
+.rotate .bar3
+  -webkit-transform: rotate(45deg) translate(-8px, -8px)
+  transform: rotate(45deg) translate(-8px, -8px)
+
+//hire me button
+.hire
+  background: rgba($dark, .7)
+  color: $vatten
+  border-top-right-radius: $radius
+  border-bottom-left-radius: $radius
+  +position(relative, 20px null null null)
+  +font($raleway, 1em, 300, 1.2, .1em, $upper)
+  padding: .4em .8em
+  position: relative
+  margin-top: 8px
+  top: 0px
+  left: 0px
+  +transition(all 300ms)
+
+  &:hover
+    box-shadow: 2px 2px 0px $vatten, 4px 4px 0px $dark
+    top: -4px
+    left: -4px
+
+  &:active
+    top: 4px
+    left: 4px
+    box-shadow: 0px 0px 0px lighten($vatten, 30%)
+
+  @media only screen and (min-width: $break-large) //1200px
+    margin-top: .4em
+    font-size: 1.3em
+
+//logo on the left
+.logo
+  width: 4em
+  height: auto
+  position: absolute
+  left: 1em
+  top: .4em
+  z-index: 99
+  &:hover
+    opacity: .8
+
+  @media only screen and (min-width: $break-small) //460px
+    width: 4.8em
+    top: -.2em
+
+  @media only screen and (min-width: $break-medium) //780px
+    left: 1.4em
+    width: 5.3em
+    top: -.4em

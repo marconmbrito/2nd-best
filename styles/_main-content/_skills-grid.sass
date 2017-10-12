@@ -1,0 +1,56 @@
+.grid
+  +flexbox(flex, row, space-between, flex-start, center)
+  flex-wrap: wrap
+  width: 90%
+  max-width: 980px
+  margin: 3em auto
+
+  .grid-item
+    width: 100%
+    margin: 1em auto
+    text-align: left
+    border: 0
+    @media only screen and (min-width: $break-small) //460px
+      width: 50%
+      padding: 10px
+    @media only screen and (min-width: $break-medium) //780px
+      border-bottom: $border-thin
+      height: 300px
+      width: 32%
+      margin: 0 .2em
+      opacity: 0
+    @media only screen and (min-width: $break-large) //1200px
+      height: 240px
+  .is-visible
+    animation: fadeIn 1000ms ease-in forwards
+    -webkit-animation: fadeIn 800ms ease-in forwards
+    -moz-animation: fadeIn 800ms ease-in forwards
+    text-align: center
+
+
+    h2
+      font-size: 1.2em
+      font-weight: 400
+      margin: .5em auto
+      text-shadow: .3px 0px 1px $lake
+    p
+      font-weight: 100px
+      text-align: justify
+
+//take of border style from 3 last children
+.no-b
+  border-bottom: 0px !important
+
+//H2 Icons
+.mobile::before
+  font-family: FontAwesome
+  content: '\f10b'
+  font-size: 1.5em
+  margin-right: .1em
+  +position(relative, 5px null null null)
+.ui::before
+  content: 'UI -'
+  margin-right: .5em
+.ux::before
+  content: 'UX -'
+  margin-right: .5em

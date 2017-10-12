@@ -1,0 +1,143 @@
+.journey
+  overflow: hidden
+  max-width: 980px
+  margin: 3em auto
+
+  &-intro
+    max-width: 700px
+    margin: 3em auto
+    text-align: center
+    padding: 0 10px
+
+    h2
+      +font(null, 2em, 300, null, null, null)
+      margin: .2em auto
+    p
+      text-align: justify
+
+
+.about-text
+  width: 100%
+  margin: 2.5em auto .5em
+  padding: 0 1em
+  text-align: justify
+  flex-direction: column
+  justify-content: space-evenly
+  flex-wrap: wrap
+  align-items: center
+  align-content: flex-start
+
+
+.about-text p, .text-wrap
+  max-width: 500px
+  flex: 1
+
+
+.timeline
+  position: relative
+
+
+.timeline::after
+  content: ''
+  position: absolute
+  width: 4px
+  background-color: rgba($navy, .6)
+  top: 0
+  bottom: 0
+  left: 50%
+  margin-left: -1px
+
+
+.wrap
+  padding: 10px 40px
+  position: relative
+  width: 50%
+
+
+.wrap::after
+  content: ''
+  position: absolute
+  width: 25px
+  height: 25px
+  right: -15px
+  background-color: #fff
+  border: 2px solid rgba($navy, .6)
+  top: 15px
+  border-radius: 50%
+  z-index: 1
+
+.left
+  left: 0
+
+
+.right
+  left: 50%
+
+
+.left::before
+  content: " "
+  height: 0
+  position: absolute
+  top: 22px
+  width: 0
+  z-index: 1
+  right: 30px
+  border: medium solid rgba($navy, .6)
+  border-width: 8px 0 8px 8px
+  border-color: transparent transparent transparent rgba($navy, .6)
+
+
+.right::before
+  content: " "
+  height: 0
+  position: absolute
+  top: 22px
+  width: 0
+  z-index: 1
+  left: 30px
+  border: medium solid rgba($navy, .6)
+  border-width: 8px 8px 8px 0
+  border-color: transparent rgba($navy, .6) transparent transparent
+
+
+.right::after
+  left: -14px
+
+
+.content
+  max-width: 400px
+  padding: 20px 30px
+  border: 2px solid rgba($navy, .6)
+  position: relative
+  border-radius: 6px
+  h3
+    +font(null, 1.2, 300, null, null, null)
+    margin: 0 auto .5em
+//particular media for this code, projected for big screens scaling down to small screens
+
+@media all and (max-width: 650px)
+  /* This makes the timeline responsive*/
+  #about-container
+    width: 100%
+
+  .timeline::after
+    left: 31px
+
+  .wrap
+    width: 100%
+    padding-left: 70px
+    padding-right: 25px
+
+  .wrap::before
+    left: 60px
+    border-width: 8px 8px 8px 0
+    border-color: transparent rgba($navy, .6) transparent transparent
+
+  .left::after, .right::after
+    left: 15px
+
+  .right
+    left: 0%
+
+  .content
+    padding: 10px 5px

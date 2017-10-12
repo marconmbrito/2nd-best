@@ -1,0 +1,35 @@
+.reviews
+  width: 100%
+  height: 60vh
+  +main-background('../img/house2.jpg', center, no-repeat, cover, fixed)
+  margin: 2em auto auto
+  color: $gray
+  +flexbox(flex, column, center, center, center)
+
+  blockquote
+    +font(null, 1.5em, 300, null, null, null)
+    width: 100%
+    margin: auto
+    padding: .3em
+    text-align: center
+    &::before
+      content: "\201C"
+      font-family: $montserrat
+      width: 10px
+      height: 10px
+      +position(relative, null null 20px 45.5%)
+      font-size: 3em
+      font-weight: bold
+      color: $vatten
+
+    cite
+      text-align: right
+      display: block
+      padding-right: 1em
+      +font(null, .6em, 100, null, null, null)
+      @media only screen and (min-width: $break-large) //1200px
+        margin-right: 1.3em
+
+
+    @media only screen and (min-width: $break-medium) //780px
+      font-size: 1.9em

@@ -1,0 +1,100 @@
+// TOGGLE MENU
+var $sideNav = $('.sideNav');
+    $window = $(window),
+    $nav = $('.main-nav')
+    $h1 = $('.hero-h1');
+    $headerHeight = $('.header').height();
+
+function openNav() { //Open Nav
+  $sideNav.css({
+    'height' : '100%'
+  });
+}
+function closeNav() { //Close nav
+  $sideNav.css({
+    'height' : '0'
+  });
+}
+
+$(".menu-icon").click(function(){
+  $(this).toggleClass("rotate"); //add rotate on click
+  if ( $(".menu-icon").hasClass("rotate")) {
+    openNav();
+  } else {
+    closeNav();
+  }
+});
+
+//Navbar fixed on scroll
+$window.scroll(function() {
+  if ($window.scrollTop() >= ($headerHeight - 200)) {
+    $nav.addClass('fixed');
+     // fade in grid on scroll
+    $('.grid').children().delay(800).each(function(i){
+      setTimeout(function(){
+        $('.grid-item').eq(i).addClass('is-visible');
+      }, 200 * i);
+    }); //end of fade-in
+
+  } else if ($window.scrollTop() <= $headerHeight)  {
+    $nav.removeClass('fixed');
+  }
+});
+
+//Bedges slideshow
+var slideIndex = 0;
+carousel();
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slide-image");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex-1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 3 seconds
+}
+
+//smooth scrolling
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+//google maps
+var myLocation = {lat: 59.3008884, lng: 18.07377150000003}; //location in lat and lng
+
+function initMap() {
+   var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10, //zoom
+    center: myLocation
+  });
+  //map icon
+  var marker = new google.maps.Marker({
+      position: myLocation,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      icon: {
+      		url: "img/map-icon.png",
+      		scaledSize: new google.maps.Size(34, 34),
+  	   }
+    });
+  }
+
+
+  //CHANGE ELEMENT ON SCREEN WIDTH
+// $(window).resize(function(){
+//     if ($(window).width() <= 500){
+//         $(".hero-h1").css('display', 'none');
+//     }
+// });
