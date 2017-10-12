@@ -30,7 +30,7 @@ $window.scroll(function() {
   if ($window.scrollTop() >= ($headerHeight - 200)) {
     $nav.addClass('fixed');
      // fade in grid on scroll
-    $('.grid').children().delay(800).each(function(i){
+    $('.grid').children().delay(1800).each(function(i){
       setTimeout(function(){
         $('.grid-item').eq(i).addClass('is-visible');
       }, 200 * i);

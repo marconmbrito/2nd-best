@@ -70,12 +70,8 @@ h1, body, html {
   0% {
     opacity: 0;
     margin-top: 500px; }
-  40% {
-    margin-top: 400px; }
-  60% {
-    margin-top: 300px; }
-  90% {
-    margin-top: 200px; }
+  30% {
+    margin-top: 250px; }
   100% {
     margin-top: 1em;
     opacity: 1; } }
@@ -383,9 +379,9 @@ body {
       .grid .grid-item {
         height: 240px; } }
   .grid .is-visible {
-    animation: fadeIn 1000ms ease-in forwards;
-    -webkit-animation: fadeIn 800ms ease-in forwards;
-    -moz-animation: fadeIn 800ms ease-in forwards;
+    animation: fadeIn 1500ms ease-in forwards;
+    -webkit-animation: fadeIn 1500ms ease-in forwards;
+    -moz-animation: fadeIn 1500ms ease-in forwards;
     text-align: center; }
     .grid .is-visible h2 {
       font-size: 1.2em;
