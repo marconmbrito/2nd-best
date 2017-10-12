@@ -91,6 +91,14 @@ function initMap() {
     });
   }
 
+/*
+load footer only once all the other elements on the page are ready, including pictures. Otherwise the footer appears on load, as it is fixed to the bottom.
+*/
+$('footer').hide();
+$( window ).on( "load", function() {
+  $('footer').show();
+})
+
 
   //CHANGE ELEMENT ON SCREEN WIDTH
 // $(window).resize(function(){
