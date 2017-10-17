@@ -1,14 +1,11 @@
-@import "_side-nav"
-@import "_menu"
-
-//DELETE LATER ---------------------------------
-body
-  height: 1500px
+@import "side-nav"
+@import "menu"
 
 .header
   width: $full-width
   height: 100vh
-  +main-background('../img/man4.jpg', center, no-repeat, cover, fixed)
+  +main-background(null, center, no-repeat, cover, fixed)
+  background-image: linear-gradient(rgba($dark, .6) 0%, transparent  100%), linear-gradient(to top, rgba($dark, .6) 0%, transparent  100%), url('../img/background.jpg')
   +flexbox(flex, column, center, center, center)
 
 .hero-h1
@@ -37,7 +34,6 @@ body
   display: none
   &:hover
     opacity: 1
-
   &::before
     content: 'Find out more'
     width: 220px
@@ -45,6 +41,6 @@ body
     +font($raleway, 1.6em, 200, null, null, null)
     color: $gray
     +position(absolute, null -3.5em 2em null)
-
+  //only display on medium screens up
   @media only screen and (min-width: $break-medium) //780px
     display: block

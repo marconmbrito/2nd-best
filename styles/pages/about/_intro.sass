@@ -1,0 +1,59 @@
+
+.about-intro
+  +font($raleway, 1.2em, 200, 1.2, 1px, null)
+  width: 100%
+  +flexbox(flex, row, center, flex-end, null)
+  flex-wrap: wrap
+  overflow: hidden
+
+  img
+    margin-top: 4em
+    width: 100%
+    height: 100%
+    height: 700px
+    position: relative
+    opacity: 0 //animate
+    right: 15em//animate
+    @media only screen and (min-width: $break-medium) //780px
+      min-height: 100vh
+      width: 40%
+      margin: 0
+
+
+  .about-text
+    +flexbox(flex, column, space-between, null, center)
+    width: 100%
+    text-align: justify
+    @media only screen and (min-width: $break-medium) //780px
+      width: 60%
+
+    h1
+      +font($montserrat, 3em, bold, 1, 5px, $upper)
+      color: $navy
+      text-shadow: 0px 0px 2px $vatten
+      text-align: center
+      +position(absolute, .9em null null 0)
+
+      span
+        +position(absolute, -1em null null 40%)
+        top: -4em //animate
+      @media only screen and (min-width: $break-small) //460px
+        font-size: 4em
+      @media only screen and (min-width: $break-medium) //780px
+        +position(absolute, 1.5em null null 21%)
+        font-size: 5em
+      @media only screen and (min-width: $break-large) //1200px
+        font-size: 6em
+        left: 25%
+        opacity: 0 //animate
+    p
+      font-size: .9em
+      padding: 1em .5em
+      @media only screen and (min-width: $break-medium) //780px
+        width: 70%
+        font-size: .7em
+        margin-bottom: 10%
+      @media only screen and (min-width: $break-large) //1200px
+        margin-bottom: 10%
+      @media only screen and (min-width: 1500px) //1500px
+        margin-bottom: 10%

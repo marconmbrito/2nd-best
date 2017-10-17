@@ -30,7 +30,7 @@ $window.scroll(function() {
   if ($window.scrollTop() >= ($headerHeight - 200)) {
     $nav.addClass('fixed');
      // fade in grid on scroll
-    $('.grid').children().delay(1800).each(function(i){
+    $('.grid').children().delay(1200).each(function(i){
       setTimeout(function(){
         $('.grid-item').eq(i).addClass('is-visible');
       }, 200 * i);
@@ -71,33 +71,14 @@ $(document).ready(function(){
   });
 });
 
-//google maps
-var myLocation = {lat: 59.3008884, lng: 18.07377150000003}; //location in lat and lng
-
-function initMap() {
-   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10, //zoom
-    center: myLocation
-  });
-  //map icon
-  var marker = new google.maps.Marker({
-      position: myLocation,
-      map: map,
-      animation: google.maps.Animation.DROP,
-      icon: {
-      		url: "img/map-icon.png",
-      		scaledSize: new google.maps.Size(34, 34),
-  	   }
-    });
-  }
-
 /*
 load footer only once all the other elements on the page are ready, including pictures. Otherwise the footer appears on load, as it is fixed to the bottom.
 */
 $('footer').hide();
-$( window ).on( "load", function() {
+$window.on( "load", function() {
   $('footer').show();
 })
+
 
 
   //CHANGE ELEMENT ON SCREEN WIDTH

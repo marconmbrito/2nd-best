@@ -10,21 +10,26 @@
     margin: 1em auto
     text-align: left
     border: 0
+    box-shadow: inset 0px 0px 2px $navy
+    border-radius: $radius
+    border: 1px solid $vatten
+    padding: 10px
     @media only screen and (min-width: $break-small) //460px
-      width: 50%
+      width: 48%
       padding: 10px
+      margin: 0 .2em
+      height: 270px
+
     @media only screen and (min-width: $break-medium) //780px
       border-bottom: $border-thin
-      height: 300px
       width: 32%
-      margin: 0 .2em
       opacity: 0
     @media only screen and (min-width: $break-large) //1200px
       height: 240px
   .is-visible
-    animation: fadeIn 1500ms ease-in forwards
-    -webkit-animation: fadeIn 1500ms ease-in forwards
-    -moz-animation: fadeIn 1500ms ease-in forwards
+    animation: fadeIn 1000ms ease-in forwards
+    -webkit-animation: fadeIn 1000ms ease-in forwards
+    -moz-animation: fadeIn 1000ms ease-in forwards
     text-align: center
 
     h2
